@@ -1,0 +1,148 @@
+
+/* Adjust top padding to bring content higher */
+.product-detail-page {
+  padding-top: var(--spacing-lg) !important;
+}
+
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: var(--spacing-lg);
+  margin-left: 10px; /* Added margin to separate from edge */
+  color: white;
+  background-color: var(--color-primary);
+  padding: 8px 16px; /* Slightly smaller padding */
+  font-size: 0.9rem; /* Slightly smaller text */
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: var(--color-primary-dark);
+  color: white;
+  transform: translateX(-5px);
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xxl);
+}
+
+.detail-image-container {
+  background-color: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.detail-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+
+.detail-category {
+  display: inline-block;
+  background-color: var(--color-primary-light);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-md);
+  font-weight: 600;
+}
+
+.detail-name {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.1;
+}
+
+.detail-price {
+  font-size: 2rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+}
+
+.detail-description h3, .detail-benefits h3 {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-primary-dark);
+}
+
+.detail-description p {
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text-light);
+}
+
+.detail-benefits ul {
+  margin-bottom: var(--spacing-xl);
+}
+
+.detail-benefits li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  color: var(--color-text);
+}
+
+.check-icon {
+  color: var(--color-primary);
+}
+
+.detail-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.btn-lg {
+  padding: 8px 20px; /* Smaller padding */
+  font-size: 0.9rem; /* Smaller text */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 20px; /* Aesthetic shape */
+}
+
+.detail-actions .btn-lg svg {
+  font-size: 1.4rem; /* Larger icon */
+}
+
+@media (max-width: 768px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+    gap: 20px; /* Drastically reduced gap for mobile */
+  }
+  
+  .detail-info {
+    text-align: center;
+  }
+
+  .detail-actions {
+    justify-content: center;
+    padding: 0 20px; /* Add side padding to separate buttons from edge */
+  }
+
+  .detail-benefits {
+    text-align: left;
+    display: inline-block; /* Keeps it centered relative to parent but left aligned text if parent is center */
+    max-width: 100%;
+  }
+
+  .detail-benefits li {
+    justify-content: flex-start;
+  }
+
+  .detail-category {
+    margin-top: -10px; /* Slight lift, relying on gap reduction */
+  }
+}

@@ -1,0 +1,256 @@
+.footer {
+  background-color: var(--color-primary-dark);
+  color: white;
+  padding: 40px 0 20px;
+  margin-top: auto;
+  border-top: 3px solid var(--color-primary);
+}
+
+/* Full width 90% Override */
+.footer .container {
+  max-width: 90% !important;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1.2fr 0.8fr;
+  gap: 15px;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+/* Brand Section Styles */
+.footer-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-description {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  line-height: 1.8;
+  max-width: 90%;
+  margin: 0 0 17px 0; /* Left aligned, bottom margin only */
+  text-align: left; /* Left align text */
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  align-items: flex-start; /* Explicitly start left */
+}
+
+/* ... existing styles ... */
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .logo-column {
+    justify-content: center;
+    order: -1; 
+  }
+  
+  .contact ul {
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  .contact ul li {
+    justify-content: center;
+  }
+
+  .contact {
+    text-align: center;
+  }
+
+  /* Force Center on Mobile (Revert "Left Align" request for mobile) */
+  .brand {
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 0;
+  }
+
+  .social-icons {
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+  
+  .footer-description {
+     margin: 0 auto 17px auto;
+     text-align: center;
+     max-width: 90%;
+  }
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: white;
+  opacity: 0.9;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.social-link svg {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.social-link:hover {
+  color: var(--color-primary);
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+.social-link span {
+  font-weight: 600;
+}
+
+/* Logo & Flag Section */
+.logo-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
+}
+
+.footer-logo-img {
+  max-width: 125px;
+  height: auto;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
+}
+
+/* Peru Section (Rightmost) */
+.peru-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-left: 2px solid rgba(255,255,255,0.1);
+  padding-left: 20px;
+  height: 100%;
+}
+
+.footer-flag-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 7px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  border-radius: 2px;
+}
+
+.peru-text {
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-section h3 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(255,255,255,0.3);
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+@media (min-width: 769px) {
+  .contact {
+    text-align: left; /* Default (Laptop): Left Align */
+  }
+
+  .contact ul {
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .contact ul li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Default (Laptop): Left Align */
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+  }
+}
+
+.icon-small {
+  font-size: 1.2rem;
+  color: white;
+}
+
+/* Logo & Flag Section */
+.logo-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Align Center */
+  text-align: center;
+}
+
+.footer-logo-img {
+  max-width: 140px;
+  height: auto;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
+}
+
+.peru-flag {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: white;
+  background: rgba(255,255,255,0.1);
+  padding: 5px 10px;
+  border-radius: 25px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.flag-icon {
+  font-size: 1rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.5rem;
+  opacity: 0.6;
+}
+
+

@@ -1,0 +1,260 @@
+.header {
+  background-color: var(--color-secondary);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: var(--spacing-md) 0;
+}
+
+/* Header 90% width */
+.header .container {
+  max-width: 90% !important;
+}
+
+@media (max-width: 768px) {
+  .header .container {
+    max-width: 100% !important;
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+/* Search Bar Styles */
+.search-container {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--color-text-light);
+  font-size: 1.1rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 16px 10px 45px;
+  border: 2px solid #e0e0e0;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+.search-input::placeholder {
+  color: var(--color-text-light);
+}
+
+/* Search Results Dropdown */
+.search-results {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1001;
+}
+
+.search-result-item {
+  padding: 15px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item:hover {
+  background: #f8f8f8;
+}
+
+.result-name {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.result-category {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  background: var(--color-primary);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.no-results {
+  padding: 20px;
+  text-align: center;
+  color: var(--color-text-light);
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.logo-img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.nav-list {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.nav-link {
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: 1.05rem;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+/* Active link underline */
+.nav-link.active {
+  color: var(--color-primary);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+/* Desktop Navigation */
+.nav-menu-desktop {
+  display: flex;
+}
+
+/* Mobile Navigation - Hidden by default */
+.nav-menu-mobile {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  /* Hide desktop nav on mobile */
+  .nav-menu-desktop {
+    display: none;
+  }
+
+  /* Show mobile nav */
+  .nav-menu-mobile {
+    display: block;
+  }
+
+  .search-container {
+    order: 3;
+    width: 100%;
+    max-width: 100%;
+    flex-basis: 100%; /* Force new line */
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  
+  .header {
+    padding-bottom: 5px; /* Reduced bottom padding */
+  }
+  
+  .logo {
+    order: 1;
+    flex-grow: 1; /* Allow logo to take available space */
+  }
+
+  .menu-icon {
+    order: 2;
+  }
+  
+  .search-input {
+    padding: 8px 12px 8px 35px; /* Reduced padding */
+    font-size: 14px; /* Prevent zoom on iOS */
+  }
+
+  .header-container {
+    flex-wrap: wrap;
+    gap: 5px; /* Reduced gap significantly */
+  }
+
+  .nav-menu-mobile {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-secondary);
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-lg) 0;
+    box-shadow: var(--shadow-md);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Hidden */
+    transition: clip-path 0.3s ease-in-out;
+  }
+
+  .nav-menu-mobile.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Visible */
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    text-align: center;
+  }
+}
