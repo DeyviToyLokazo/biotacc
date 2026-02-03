@@ -151,40 +151,79 @@ Consulta: ${formData.message}`;
           {/* Info Side */}
           <motion.div className="contact-info" variants={cardVariants}>
             <h2>Información de Contacto</h2>
-            <p>Estamos listos para asesorarte. Escríbenos o visítanos.</p>
+            <p className="contact-intro">Estamos listos para asesorarte. Escríbenos o visítanos.</p>
             
-            <ul className="contact-list">
-              <li>
-                <div className="icon-circle"><FaPhone /></div>
-                <div>
-                  <strong>Llámanos</strong>
-                  <p>+51 934 408 500</p>
-                  <p>+51 954 013 027</p>
-                </div>
-              </li>
-              <li>
-                <div className="icon-circle"><FaWhatsapp /></div>
-                <div>
-                  <strong>WhatsApp</strong>
-                  <p>+51 934 408 500</p>
-                </div>
-              </li>
-              <li>
-                <div className="icon-circle"><FaEnvelope /></div>
-                <div>
-                  <strong>Correo</strong>
-                  <p>biotaccagrosac1@gmail.com</p>
-                </div>
-              </li>
-              <li>
-                <div className="icon-circle"><FaMapMarkerAlt /></div>
-                <div>
-                  <strong>Ubicación</strong>
-                  <p>Fundo Mundaca S/N, Catacaos - Piura</p>
-                  <p>Mz. E Lt. 08, Ferreñafe - Lambayeque</p>
-                </div>
-              </li>
-            </ul>
+            <div className="sedes-container">
+              {/* SEDE PIURA */}
+              <div className="sede-block">
+                <h3 className="sede-title">Sede Piura</h3>
+                <ul className="contact-list">
+                  <li>
+                    <div className="icon-circle"><FaPhone /></div>
+                    <div>
+                      <strong>Llámanos</strong>
+                      <p>+51 934 408 500</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="icon-circle"><FaWhatsapp /></div>
+                    <div>
+                      <strong>WhatsApp</strong>
+                      <p>+51 934 408 500</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="icon-circle"><FaEnvelope /></div>
+                    <div>
+                      <strong>Correo</strong>
+                      <p>piura@biotaccagro.com</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="icon-circle"><FaMapMarkerAlt /></div>
+                    <div>
+                      <strong>Ubicación</strong>
+                      <p>Fundo Mundaca S/N, Catacaos - Piura</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              {/* SEDE FERREÑAFE */}
+              <div className="sede-block">
+                <h3 className="sede-title">Sede Ferreñafe</h3>
+                <ul className="contact-list">
+                  <li>
+                    <div className="icon-circle"><FaPhone /></div>
+                    <div>
+                      <strong>Llámanos</strong>
+                      <p>+51 954 013 027</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="icon-circle"><FaWhatsapp /></div>
+                    <div>
+                      <strong>WhatsApp</strong>
+                      <p>+51 954 013 027</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="icon-circle"><FaEnvelope /></div>
+                    <div>
+                      <strong>Correo</strong>
+                      <p>ferrenafe@biotaccagro.com</p>
+                    </div>
+                  </li>
+                  <li>
+                     <div className="icon-circle"><FaMapMarkerAlt /></div>
+                     <div>
+                       <strong>Ubicación</strong>
+                       <p>Mz. E Lt. 08, Ferreñafe - Lambayeque</p>
+                     </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </motion.div>
 
           {/* Form Side */}

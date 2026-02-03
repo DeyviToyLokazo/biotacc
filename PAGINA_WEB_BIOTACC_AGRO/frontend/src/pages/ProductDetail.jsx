@@ -54,10 +54,16 @@ const ProductDetail = () => {
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
               <FaWhatsapp /> Consultar
             </a>
-            {/* Placeholder for PDF */}
-            <button className="btn btn-outline btn-lg" onClick={() => alert('Descarga de ficha técnica pronto')}>
-              <FaFileDownload /> Ficha Técnica
-            </button>
+            {/* PDF Link */}
+            {product.pdf ? (
+              <a href={product.pdf} target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-lg">
+                <FaFileDownload /> Ficha Técnica
+              </a>
+            ) : (
+              <button className="btn btn-outline btn-lg" onClick={() => alert('Ficha técnica no disponible por el momento')}>
+                <FaFileDownload /> Ficha Técnica
+              </button>
+            )}
           </div>
         </div>
       </div>
