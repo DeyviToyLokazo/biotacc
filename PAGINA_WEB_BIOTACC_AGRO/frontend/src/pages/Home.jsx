@@ -5,13 +5,7 @@ import HeroCarousel from '../components/HeroCarousel';
 
 import { motion, useInView } from 'framer-motion';
 
-// Import images for cards (Spanish names)
-import imgCientifico from '../assets/images/enfoque-cientifico.jpg';
-import imgSostenibilidad from '../assets/images/sostenibilidad-campo.jpg';
-import imgResultados from '../assets/images/certificacion-organica.jpg';
-import imgAsesoria from '../assets/images/asesoria-tecnica.jpg';
-import imgCalidad from '../assets/images/calidad-producto.jpg';
-import imgInnovacion from '../assets/images/innovacion-agro.jpg';
+
 
 const Typewriter = ({ text, delay = 100, startDelay = 0 }) => {
   const [currentText, setCurrentText] = useState('');
@@ -53,12 +47,12 @@ const Typewriter = ({ text, delay = 100, startDelay = 0 }) => {
 };
 
 const highlights = [
-  { id: 1, title: 'Enfoque Científico', text: 'Desarrollamos soluciones basadas en investigación para potenciar la biología del suelo.', img: imgCientifico },
-  { id: 2, title: 'Sostenibilidad', text: 'Productos amigables con el medio ambiente que promueven una agricultura regenerativa.', img: imgSostenibilidad },
-  { id: 3, title: 'Resultados', text: 'Incremento comprobado en la productividad y calidad de los cultivos.', img: imgResultados },
-  { id: 4, title: 'Asesoría Técnica', text: 'Te acompañamos en todo el proceso. Nuestro equipo de ingenieros agrónomos está a tu disposición.', img: imgAsesoria },
-  { id: 5, title: 'Calidad Premium', text: 'Insumos de alta pureza y concentración, diseñados para maximizar el rendimiento de tu cosecha.', img: imgCalidad },
-  { id: 6, title: 'Innovación Constante', text: 'Investigamos continuamente para desarrollar nuevas nutriciones que se adapten al cambio climático.', img: imgInnovacion },
+  { id: 1, title: 'Enfoque Científico', text: 'Desarrollamos soluciones basadas en investigación para potenciar la biología del suelo.' },
+  { id: 2, title: 'Sostenibilidad', text: 'Productos amigables con el medio ambiente que promueven una agricultura regenerativa.' },
+  { id: 3, title: 'Resultados', text: 'Incremento comprobado en la productividad y calidad de los cultivos.' },
+  { id: 4, title: 'Asesoría Técnica', text: 'Te acompañamos en todo el proceso. Nuestro equipo de ingenieros agrónomos está a tu disposición.' },
+  { id: 5, title: 'Calidad Premium', text: 'Insumos de alta pureza y concentración, diseñados para maximizar el rendimiento de tu cosecha.' },
+  { id: 6, title: 'Innovación Constante', text: 'Investigamos continuamente para desarrollar nuevas nutriciones que se adapten al cambio climático.' },
 ];
 
 const containerVariants = {
@@ -111,7 +105,7 @@ const Home = () => {
              viewport={{ once: true, amount: 0.5 }}
              variants={fadeInUp}
            >
-             Excellencia, tecnología y compromiso en cada producto.
+             Excelencia, tecnología y compromiso en cada producto.
            </motion.p>
         </div>
         
@@ -128,9 +122,6 @@ const Home = () => {
                className="highlight-card"
                variants={cardVariants}
              >
-                <div className="card-img-wrapper">
-                  <img src={item.img} alt={item.title} className="card-img" />
-                </div>
                 <div className="card-content">
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>

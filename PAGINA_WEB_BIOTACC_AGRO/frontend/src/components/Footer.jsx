@@ -19,6 +19,9 @@ const Footer = () => {
           <p className="footer-description">
             Líderes en biotecnología agrícola. Insumos orgánicos certificados para una agricultura sostenible y rentable.
           </p>
+          <p className="footer-ruc" style={{ color: 'white', fontWeight: 'bold', marginTop: '10px' }}>
+            RUC: 20607864072
+          </p>
           <div className="social-icons">
             <a href="https://www.facebook.com/share/1Chc7MQr6N/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="social-link">
               <FaFacebook className="icon-facebook" />
@@ -49,7 +52,7 @@ const Footer = () => {
             </li>
             <li>
               <FaEnvelope className="icon-small" /> 
-              <span>biotaccagrosac1@gmail.com</span>
+              <span>biotaccagrosac@biotacc.com</span>
             </li>
           </ul>
         </div>

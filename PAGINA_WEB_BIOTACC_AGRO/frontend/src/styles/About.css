@@ -153,13 +153,10 @@
   font-size: 0.95rem;
 }
 
-.plant-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: var(--border-radius);
+.plant-icon {
+  font-size: 4rem;
+  color: white;
   margin-bottom: var(--spacing-md);
-  border: 4px solid white;
 }
 
 .section-subtitle {
@@ -202,8 +199,9 @@ section:has(.plants-title) .plants-title {
 
 
 .certifications-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: var(--spacing-xl);
   margin-bottom: var(--spacing-xl);
   align-items: stretch; /* Ensure all items stretch to the same height */
@@ -221,6 +219,8 @@ section:has(.plants-title) .plants-title {
   display: flex;
   flex-direction: column;
   height: 100%;
+  flex: 0 1 400px; /* Base width of 400px, but can shrink */
+  min-width: 300px; /* Minimum width to maintain readability */
 }
 
 .cert-img {

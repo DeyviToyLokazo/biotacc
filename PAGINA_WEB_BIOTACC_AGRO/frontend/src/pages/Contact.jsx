@@ -162,21 +162,21 @@ Consulta: ${formData.message}`;
                     <div className="icon-circle"><FaPhone /></div>
                     <div>
                       <strong>Llámanos</strong>
-                      <p>+51 934 408 500</p>
+                      <p>+51 981 029 680</p>
                     </div>
                   </li>
                   <li>
                     <div className="icon-circle"><FaWhatsapp /></div>
                     <div>
                       <strong>WhatsApp</strong>
-                      <p>+51 934 408 500</p>
+                      <p>+51 981 029 680</p>
                     </div>
                   </li>
                   <li>
                     <div className="icon-circle"><FaEnvelope /></div>
                     <div>
                       <strong>Correo</strong>
-                      <p>piura@biotaccagro.com</p>
+                      <p>cesar_merino@biotacc.com</p>
                     </div>
                   </li>
                   <li>
@@ -197,21 +197,21 @@ Consulta: ${formData.message}`;
                     <div className="icon-circle"><FaPhone /></div>
                     <div>
                       <strong>Llámanos</strong>
-                      <p>+51 954 013 027</p>
+                      <p>+51 917 152 775</p>
                     </div>
                   </li>
                   <li>
                     <div className="icon-circle"><FaWhatsapp /></div>
                     <div>
                       <strong>WhatsApp</strong>
-                      <p>+51 954 013 027</p>
+                      <p>+51 917 152 775</p>
                     </div>
                   </li>
                   <li>
                     <div className="icon-circle"><FaEnvelope /></div>
                     <div>
                       <strong>Correo</strong>
-                      <p>ferrenafe@biotaccagro.com</p>
+                      <p>jymani_santamaria@biotacc.com</p>
                     </div>
                   </li>
                   <li>

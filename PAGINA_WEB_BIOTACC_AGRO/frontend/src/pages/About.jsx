@@ -157,12 +157,12 @@ const About = () => {
           variants={plantsContainer}
         >
           <motion.div className="plant-card" variants={plantCard}>
-            <img src="/images/plant-piura.jpg" alt="Planta Piura" className="plant-img" />
+            <FaIndustry className="plant-icon" />
             <h3>Planta Piura</h3>
             <p>Fundo Mundaca S/N, C.P. Simbila, Catacaos.</p>
           </motion.div>
           <motion.div className="plant-card" variants={plantCard}>
-            <img src="/images/plant-lambayeque.png" alt="Planta Lambayeque" className="plant-img" />
+            <FaIndustry className="plant-icon" />
             <h3>Planta Lambayeque</h3>
             <p>Mz. E Lt. 08, C.P. Fala II Etapa, Ferreñafe.</p>
           </motion.div>
@@ -196,9 +196,7 @@ const About = () => {
               Certificación otorgada por <strong>Kiwa - Costa Rica</strong>, 
               conforme a los requisitos técnicos y normativos aplicables para productos orgánicos.
             </p>
-            <a href="/documents/certificacion-1.pdf" target="_blank" rel="noopener noreferrer" className="cert-download-btn">
-              <FaFilePdf className="pdf-icon" /> Descargar PDF
-            </a>
+
           </motion.div>
           
           <motion.div className="certification-card" variants={plantCard}>
@@ -209,23 +207,10 @@ const About = () => {
               Certificación de calidad otorgada por <strong>Kiwa - Costa Rica</strong>, 
               validando nuestros procesos de producción y control de calidad.
             </p>
-            <a href="/documents/certificacion-2.pdf" target="_blank" rel="noopener noreferrer" className="cert-download-btn">
-              <FaFilePdf className="pdf-icon" /> Descargar PDF
-            </a>
+
           </motion.div>
           
-          <motion.div className="certification-card" variants={plantCard}>
-            <img src="/images/certificacion-3.jpg" alt="Certificación 3" className="cert-img" />
-            <FaAward className="cert-icon" />
-            <h3>Certificación Ambiental</h3>
-            <p>
-              Certificación que valida nuestro compromiso con prácticas sostenibles y 
-              responsables con el medio ambiente.
-            </p>
-            <a href="/documents/certificacion-3.pdf" target="_blank" rel="noopener noreferrer" className="cert-download-btn">
-              <FaFilePdf className="pdf-icon" /> Descargar PDF
-            </a>
-          </motion.div>
+
         </motion.div>
         
       </section>
@@ -243,7 +228,7 @@ const About = () => {
         </motion.p>
         <div className="map-container">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15887.828552187313!2d-80.6865261!3d-5.2635336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904a11f2a33f443b%3A0x64f1345f653490!2sSimbila%2C%20Catacaos!5e0!3m2!1ses-419!2spe!4v1704987254321!5m2!1ses-419!2spe" 
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d7925.897403951891!2d-79.83588753436842!3d-6.653280784111774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMzknNDguMCJTIDc5wrA0OCc0My41Ilc!5e0!3m2!1ses!2spe!4v1770685583147!5m2!1ses!2spe" 
             width="100%" 
             height="450" 
             style={{ border: 0, borderRadius: '15px' }} 
