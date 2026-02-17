@@ -12,7 +12,7 @@ export const products = [
   },
   {
     id: "granulado-2",
-    name: "BIO - SUELO GRANULAR",
+    name: "BIOTACC SUELO",
     category: "Granulados",
     price: 90.0,
     image: "/images/products/granulado-2.png",
