@@ -170,6 +170,29 @@
   border-radius: 2px;
 }
 
+/* ── Premium nav link ─────────────────────── */
+.nav-link--premium {
+  color: #8b6914;
+  font-weight: 700;
+  background: linear-gradient(90deg, #c9a227, #e8b800);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  padding-bottom: 5px;
+  transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+.nav-link--premium:hover {
+  filter: brightness(1.2);
+  transform: translateY(-1px);
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-link--premium.active::after {
+  background: linear-gradient(90deg, #c9a227, #e8b800);
+}
+
 /* Desktop Navigation */
 .nav-menu-desktop {
   display: flex;

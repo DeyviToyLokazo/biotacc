@@ -41,7 +41,7 @@ const Catalog = () => {
     ? products 
     : products.filter(p => p.category === filter);
 
-  const categories = ['Todos', 'Granulados', 'Foliares'];
+  const categories = ['Todos', 'Granulados', 'Foliares', 'Protección', 'Complementos'];
 
   // Animation Variants
   const containerVariants = {

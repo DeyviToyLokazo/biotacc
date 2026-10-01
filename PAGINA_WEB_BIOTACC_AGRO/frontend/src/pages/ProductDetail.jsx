@@ -44,9 +44,9 @@ const ProductDetail = () => {
           <div className="detail-benefits">
             <h3>Beneficios Clave</h3>
             <ul>
-              <li><FaCheckCircle className="check-icon"/> Mejora la estructura del suelo.</li>
-              <li><FaCheckCircle className="check-icon"/> Incrementa la absorción de nutrientes.</li>
-              <li><FaCheckCircle className="check-icon"/> Producto 100% Orgánico y Sostenible.</li>
+              {product.benefits && product.benefits.map((benefit, index) => (
+                <li key={index}><FaCheckCircle className="check-icon"/> {benefit}</li>
+              ))}
             </ul>
           </div>
 
