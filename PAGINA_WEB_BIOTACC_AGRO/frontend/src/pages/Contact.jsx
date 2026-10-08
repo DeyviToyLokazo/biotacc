@@ -154,72 +154,57 @@ Consulta: ${formData.message}`;
             <p className="contact-intro">Estamos listos para asesorarte. Escríbenos o visítanos.</p>
             
             <div className="sedes-container">
-              {/* SEDE PIURA */}
+              {/* SEDE ÚNICA - PIURA */}
               <div className="sede-block">
                 <h3 className="sede-title">Sede Piura</h3>
                 <ul className="contact-list">
                   <li>
-                    <div className="icon-circle"><FaPhone /></div>
-                    <div>
-                      <strong>Llámanos</strong>
-                      <p>+51 981 029 680</p>
-                    </div>
+                    <a href="tel:+51934408500" className="contact-link" id="contact-phone">
+                      <div className="icon-circle"><FaPhone /></div>
+                      <div>
+                        <strong>Llámanos</strong>
+                        <p>+51 934 408 500</p>
+                      </div>
+                    </a>
                   </li>
                   <li>
-                    <div className="icon-circle"><FaWhatsapp /></div>
-                    <div>
-                      <strong>WhatsApp</strong>
-                      <p>+51 981 029 680</p>
-                    </div>
+                    <a 
+                      href="https://wa.me/51934408500" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="contact-link" 
+                      id="contact-whatsapp"
+                    >
+                      <div className="icon-circle"><FaWhatsapp /></div>
+                      <div>
+                        <strong>WhatsApp</strong>
+                        <p>+51 934 408 500</p>
+                      </div>
+                    </a>
                   </li>
                   <li>
-                    <div className="icon-circle"><FaEnvelope /></div>
-                    <div>
-                      <strong>Correo</strong>
-                      <p>cesar_merino@biotacc.com</p>
-                    </div>
+                    <a href="mailto:biotaccagrosac@biotacc.com" className="contact-link" id="contact-email">
+                      <div className="icon-circle"><FaEnvelope /></div>
+                      <div>
+                        <strong>Correo</strong>
+                        <p>biotaccagrosac@biotacc.com</p>
+                      </div>
+                    </a>
                   </li>
                   <li>
-                    <div className="icon-circle"><FaMapMarkerAlt /></div>
-                    <div>
-                      <strong>Ubicación</strong>
-                      <p>Fundo Mundaca S/N, Catacaos - Piura</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              {/* SEDE FERREÑAFE */}
-              <div className="sede-block">
-                <h3 className="sede-title">Sede Ferreñafe</h3>
-                <ul className="contact-list">
-                  <li>
-                    <div className="icon-circle"><FaPhone /></div>
-                    <div>
-                      <strong>Llámanos</strong>
-                      <p>+51 917 152 775</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="icon-circle"><FaWhatsapp /></div>
-                    <div>
-                      <strong>WhatsApp</strong>
-                      <p>+51 917 152 775</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="icon-circle"><FaEnvelope /></div>
-                    <div>
-                      <strong>Correo</strong>
-                      <p>jymani_santamaria@biotacc.com</p>
-                    </div>
-                  </li>
-                  <li>
-                     <div className="icon-circle"><FaMapMarkerAlt /></div>
-                     <div>
-                       <strong>Ubicación</strong>
-                       <p>Mz. E Lt. 08, Ferreñafe - Lambayeque</p>
-                     </div>
+                    <a 
+                      href="https://www.google.com/maps/search/?api=1&query=Fundo+Mundaca+Catacaos+Piura" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="contact-link" 
+                      id="contact-location"
+                    >
+                      <div className="icon-circle"><FaMapMarkerAlt /></div>
+                      <div>
+                        <strong>Ubicación</strong>
+                        <p>Fundo Mundaca S/N, Catacaos - Piura</p>
+                      </div>
+                    </a>
                   </li>
                 </ul>
               </div>

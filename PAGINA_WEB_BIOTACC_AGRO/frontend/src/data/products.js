@@ -27,7 +27,7 @@ export const products = [
     category: "Fertilizantes",
     subcategory: "Biotacc suelo",
     price: 90.0,
-    image: "/images/products/granulado-2.png",
+    image: "/images/products/granulado-2.webp",
     description:
       "Fertilizante orgánico edáfico con fósforo, calcio, silicio y materia orgánica para el mejoramiento integral del suelo.",
     benefits: [
@@ -61,7 +61,7 @@ export const products = [
     category: "Fertilizantes",
     subcategory: "Nitrorganico",
     price: 88.0,
-    image: "/images/products/granulado-4.png",
+    image: "/images/products/granulado-4.webp",
     description:
       "Fertilizante orgánico granulado con microelementos esenciales para una nutrición uniforme y eficiente del suelo.",
     benefits: [
@@ -78,7 +78,7 @@ export const products = [
     category: "Fertilizantes",
     subcategory: "Silmag-ok",
     price: 85.0,
-    image: "/images/products/granulado-1.png",
+    image: "/images/products/granulado-1.webp",
     description:
       "Fertilizante granulado con silicio, magnesio, fósforo y potasio para estimular el crecimiento radicular y mejorar la calidad de frutos.",
     benefits: [

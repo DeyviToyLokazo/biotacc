@@ -73,7 +73,7 @@ const Header = () => {
               <NavLink to="/productos" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Productos</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/premium" className={({ isActive }) => isActive ? "nav-link nav-link--premium active" : "nav-link nav-link--premium"}>⭐ Premium</NavLink>
+              <NavLink to="/servicios" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Servicios</NavLink>
             </li>
             <li className="nav-item">
               <NavLink to="/contacto" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Contacto</NavLink>
@@ -136,7 +136,7 @@ const Header = () => {
               <NavLink to="/productos" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={toggleMenu}>Productos</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/premium" className={({ isActive }) => isActive ? "nav-link nav-link--premium active" : "nav-link nav-link--premium"} onClick={toggleMenu}>⭐ Premium</NavLink>
+              <NavLink to="/servicios" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={toggleMenu}>Servicios</NavLink>
             </li>
             <li className="nav-item">
               <NavLink to="/contacto" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={toggleMenu}>Contacto</NavLink>

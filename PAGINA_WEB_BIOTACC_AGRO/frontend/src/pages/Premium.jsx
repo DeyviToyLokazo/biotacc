@@ -8,7 +8,7 @@ const lineaClasica = [
     id: 'clasica-biotacc-suelo',
     name: 'BIOTACC SUELO',
     subtitle: 'Fertilizante Orgánico Edáfico',
-    image: '/images/products/granulado-2.png',
+    image: '/images/products/granulado-2.webp',
     benefits: [
       'Aporta fósforo, calcio, silicio y materia orgánica.',
       'Permite una mejor estructura del suelo.',
@@ -34,7 +34,7 @@ const lineaClasica = [
     id: 'clasica-nitrorganico',
     name: 'NITRORGÁNICO ESSENTIAL MICROMIX',
     subtitle: 'Fertilizante Orgánico Granulado',
-    image: '/images/products/granulado-4.png',
+    image: '/images/products/granulado-4.webp',
     benefits: [
       'Mejora la fertilidad del suelo.',
       'Favorece el desarrollo radicular.',
@@ -47,7 +47,7 @@ const lineaClasica = [
     id: 'clasica-silmag',
     name: 'SILMAG - PK',
     subtitle: 'Fertilizante Granulado',
-    image: '/images/products/granulado-1.png',
+    image: '/images/products/granulado-1.webp',
     benefits: [
       'Estimula el crecimiento radicular.',
       'Incrementa el tamaño y peso de granos y frutos.',
@@ -64,7 +64,7 @@ const lineaPremiun = [
     id: 'premiun-biotacc-suelo',
     name: 'BIOTACC SUELO',
     subtitle: 'Fertilizante Orgánico Edáfico Premium',
-    image: '/images/products/granulado-2.png',
+    image: '/images/products/granulado-2.webp',
     benefits: [
       'Aporta fósforo, calcio, silicio y materia orgánica.',
       'Permite una mejor estructura del suelo.',
@@ -90,7 +90,7 @@ const lineaPremiun = [
     id: 'premiun-nitrorganico',
     name: 'NITRORGÁNICO',
     subtitle: 'Fertilizante Orgánico Premium',
-    image: '/images/products/granulado-4.png',
+    image: '/images/products/granulado-4.webp',
     benefits: [
       'Mejora la fertilidad del suelo.',
       'Favorece el desarrollo radicular.',
@@ -103,7 +103,7 @@ const lineaPremiun = [
     id: 'premiun-silmag',
     name: 'SILMAG PK',
     subtitle: 'Fertilizante Granulado Premium',
-    image: '/images/products/granulado-1.png',
+    image: '/images/products/granulado-1.webp',
     benefits: [
       'Estimula el crecimiento radicular.',
       'Incrementa el tamaño y peso de granos y frutos.',

@@ -11,6 +11,7 @@ import Catalog from './pages/Catalog';
 import ProductDetail from './pages/ProductDetail';
 import Contact from './pages/Contact';
 import Premium from './pages/Premium';
+import Services from './pages/Services';
 
 function App() {
   // Solo mostrar el loader la primera vez que se entra a la web
@@ -35,6 +36,7 @@ function App() {
             <Route path="/nosotros" element={<About />} />
             <Route path="/productos" element={<Catalog />} />
             <Route path="/productos/:id" element={<ProductDetail />} />
+            <Route path="/servicios" element={<Services />} />
             <Route path="/premium" element={<Premium />} />
             <Route path="/contacto" element={<Contact />} />
             {/* Fallback */}
