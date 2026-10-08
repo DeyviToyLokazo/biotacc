@@ -22,7 +22,8 @@ const Header = () => {
     if (query.trim().length > 0) {
       const filtered = products.filter(product =>
         product.name.toLowerCase().includes(query.toLowerCase()) ||
-        product.category.toLowerCase().includes(query.toLowerCase())
+        product.category.toLowerCase().includes(query.toLowerCase()) ||
+        (product.subcategory && product.subcategory.toLowerCase().includes(query.toLowerCase()))
       );
       setSearchResults(filtered);
       setShowResults(true);
@@ -104,7 +105,7 @@ const Header = () => {
                   onClick={() => handleProductClick(product.id)}
                 >
                   <span className="result-name">{product.name}</span>
-                  <span className="result-category">{product.category}</span>
+                  <span className="result-category">{product.subcategory || product.category}</span>
                 </div>
               ))}
             </div>

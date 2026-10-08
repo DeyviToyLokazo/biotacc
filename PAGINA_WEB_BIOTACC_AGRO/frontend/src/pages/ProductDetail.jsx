@@ -32,7 +32,9 @@ const ProductDetail = () => {
         </div>
 
         <div className="detail-info">
-          <span className="detail-category">{product.category}</span>
+          <span className="detail-category">
+            {product.category}{product.subcategory ? ` • ${product.subcategory}` : ''}
+          </span>
           <h1 className="detail-name">{product.name}</h1>
 
           

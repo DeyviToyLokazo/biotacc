@@ -1,0 +1,406 @@
+/* ==========================================================================
+   CATEGORY ACCORDION - BIOTACC AGRO (EMERALD / AGRO THEME)
+   ========================================================================== */
+
+.category-accordion-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid rgba(16, 185, 129, 0.18);
+  box-shadow: 0 10px 28px -6px rgba(5, 150, 105, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+  padding: 22px 18px;
+  position: sticky;
+  top: 96px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #a7f3d0 transparent;
+  transition: box-shadow var(--transition-normal);
+}
+
+.category-accordion-card:hover {
+  box-shadow: 0 14px 34px -6px rgba(5, 150, 105, 0.12), 0 6px 14px -2px rgba(0, 0, 0, 0.04);
+}
+
+.category-accordion-card::-webkit-scrollbar {
+  width: 5px;
+}
+.category-accordion-card::-webkit-scrollbar-thumb {
+  background-color: #a7f3d0;
+  border-radius: 10px;
+}
+
+/* Header */
+.accordion-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 4px;
+}
+
+.header-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-icon {
+  font-size: 1.15rem;
+  color: #059669;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #064e3b;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.btn-clear-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #059669;
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  padding: 4px 10px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-clear-inline:hover {
+  background-color: #059669;
+  color: #ffffff;
+  border-color: #059669;
+  transform: translateY(-1px);
+}
+
+/* All products button */
+.all-products-wrapper {
+  margin-bottom: 14px;
+}
+
+.all-products-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: #f8faf9;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  color: #1f2937;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.all-products-btn .btn-content-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.all-products-btn .all-icon {
+  color: #059669;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.all-products-btn:hover {
+  background: #ecfdf5;
+  border-color: #6ee7b7;
+  color: #065f46;
+  transform: translateX(2px);
+}
+
+.all-products-btn:hover .all-icon {
+  transform: scale(1.1);
+}
+
+.all-products-btn.active {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: #ffffff;
+  border-color: #059669;
+  box-shadow: 0 6px 16px -2px rgba(16, 185, 129, 0.35);
+}
+
+.all-products-btn.active .all-icon {
+  color: #ffffff;
+}
+
+.all-products-btn.active .count-badge {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* Divider */
+.accordion-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #e2e8f0, transparent);
+  margin: 12px 0 16px 0;
+}
+
+/* Accordion List */
+.accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.accordion-group {
+  border-radius: 14px;
+  border: 1px solid #eef2ef;
+  background: #ffffff;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.accordion-group:hover {
+  border-color: #a7f3d0;
+}
+
+.accordion-group.has-active-child {
+  border-color: #6ee7b7;
+  box-shadow: 0 4px 14px -3px rgba(16, 185, 129, 0.12);
+}
+
+/* Accordion Header */
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  cursor: pointer;
+  background: #fafcfb;
+  border-radius: 13px;
+  user-select: none;
+  transition: all 0.25s ease;
+}
+
+.accordion-header:hover {
+  background: #ecfdf5;
+}
+
+.accordion-header.active-category {
+  background: #e6fcf0;
+  border-left: 4px solid #059669;
+}
+
+.accordion-header.active-category .category-name {
+  color: #047857;
+  font-weight: 700;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cat-icon {
+  font-size: 1.05rem;
+  color: #059669;
+}
+
+.category-name {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #1e293b;
+  transition: color 0.2s ease;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Badges */
+.count-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 22px;
+  padding: 0 7px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: #e2e8f0;
+  color: #475569;
+  transition: all 0.2s ease;
+}
+
+.count-main {
+  background: #e0f2fe;
+  color: #0369a1;
+  background: #d1fae5;
+  color: #065f46;
+}
+
+/* Chevron */
+.chevron-btn {
+  background: transparent;
+  border: none;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-size: 0.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chevron-btn:hover {
+  background: rgba(16, 185, 129, 0.15);
+  color: #059669;
+}
+
+.chevron-btn.open {
+  transform: rotate(180deg);
+  color: #059669;
+}
+
+/* Accordion Content Collapse */
+.accordion-content-collapse {
+  overflow: hidden;
+}
+
+.subcategories-list {
+  list-style: none;
+  padding: 8px 10px 12px 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-left: 2px solid #d1fae5;
+  margin-left: 20px;
+  margin-bottom: 6px;
+}
+
+.subcategory-item-wrapper {
+  margin: 0;
+}
+
+.subcategory-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: #334155;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-align: left;
+  transition: all 0.22s ease;
+  cursor: pointer;
+}
+
+.subcat-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+  color: #059669;
+}
+
+.check-icon {
+  font-size: 0.72rem;
+}
+
+.subcat-name {
+  flex-grow: 1;
+  line-height: 1.3;
+}
+
+.count-badge.subcount {
+  font-size: 0.72rem;
+  min-width: 20px;
+  height: 19px;
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+/* Subcategory Hover & Active */
+.subcategory-btn:hover {
+  background: #f0fdf4;
+  color: #065f46;
+  border-color: #d1fae5;
+  transform: translateX(3px);
+}
+
+.subcategory-btn.active {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.28);
+  border-color: transparent;
+}
+
+.subcategory-btn.active .subcat-indicator {
+  color: #ffffff;
+}
+
+.subcategory-btn.active .count-badge.subcount {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* "Ver todo en [Categoría]" special styling */
+.subcategory-all-btn {
+  font-style: italic;
+  font-weight: 500;
+  color: #047857;
+  border-bottom: 1px dashed #d1fae5;
+  border-radius: 8px;
+  margin-bottom: 4px;
+}
+
+.subcategory-all-btn.active {
+  font-style: normal;
+  background: #d1fae5;
+  color: #064e3b;
+  box-shadow: none;
+  border-color: #6ee7b7;
+}
+
+.subcategory-all-btn.active .subcat-indicator {
+  color: #065f46;
+}
+
+.subcategory-all-btn.active .count-badge.subcount {
+  background: #a7f3d0;
+  color: #064e3b;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN FOR ACCORDION
+   ========================================================================== */
+@media (max-width: 991px) {
+  .category-accordion-card {
+    position: static;
+    max-height: none;
+    margin-bottom: 24px;
+    border-radius: 16px;
+    padding: 18px 14px;
+  }
+
+  .subcategories-list {
+    margin-left: 12px;
+    padding-left: 12px;
+  }
+}

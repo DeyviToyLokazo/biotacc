@@ -1,10 +1,35 @@
-.catalog-page .page-title {
-  margin-top: -30px; /* Adjusted as per user request */
-}
+/* ==========================================================================
+   CATALOG PAGE - BIOTACC AGRO SAC
+   Theme: Modern Agro / Natural Emerald Palette
+   ========================================================================== */
 
 .catalog-page {
   padding-top: 40px;
-  padding-bottom: 60px;
+  padding-bottom: 70px;
+}
+
+.catalog-page .page-title {
+  margin-top: -30px; /* Adjusted as per user preference */
+  font-size: 2.5rem;
+  color: var(--color-primary-dark);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.catalog-header-wrap {
+  margin-bottom: 36px;
+}
+
+.catalog-subtitle {
+  color: #4b5563;
+  font-size: 1.05rem;
+  max-width: 650px;
+  margin: 10px auto 0 auto;
+  line-height: 1.5;
 }
 
 /* Typewriter Effect Cursor */
@@ -29,82 +54,334 @@
 }
 
 .catalog-page .title-icon {
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   color: var(--color-primary);
-  margin-right: 10px;
+  margin-right: 8px;
   vertical-align: middle;
 }
 
-@media (max-width: 480px) {
-  .catalog-page .title-icon {
-    font-size: 1.8rem;
-  }
-  .page-title {
-    font-size: 2rem;
-    padding: 0 10px;
-  }
+/* ==========================================================================
+   MOBILE FILTER TRIGGER BUTTON
+   ========================================================================== */
+.mobile-filter-trigger-wrap {
+  display: none;
+  margin-bottom: 20px;
 }
 
-.filters-container {
+.mobile-filter-trigger-btn {
+  width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-xl);
-  flex-wrap: wrap;
-}
-
-.filter-label {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--color-primary);
-}
-
-.filter-icon {
-  margin-right: 5px;
-  vertical-align: middle;
-}
-
-.filter-select {
-  padding: 10px 24px;
-  border-radius: 10px;
-  background-color: white;
-  border: 2px solid var(--color-primary);
-  color: var(--color-primary);
-  font-weight: 600;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: #ffffff;
+  border: 1px solid #a7f3d0;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px -2px rgba(16, 185, 129, 0.12);
+  color: #064e3b;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: all var(--transition-fast);
-  min-width: 200px;
+  transition: all 0.25s ease;
 }
 
-.filter-select:hover {
-  background-color: var(--color-primary-light);
-  color: white;
+.mobile-filter-trigger-btn .trigger-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.filter-select:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.3);
+.mobile-filter-trigger-btn .trigger-icon {
+  color: #059669;
+  font-size: 1.1rem;
 }
 
+.mobile-filter-trigger-btn .trigger-badge {
+  background: #10b981;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.mobile-filter-trigger-btn .trigger-icon-arrow {
+  color: #059669;
+  font-size: 0.9rem;
+}
+
+.mobile-filter-trigger-btn:hover {
+  background: #ecfdf5;
+  border-color: #34d399;
+}
+
+/* ==========================================================================
+   CATALOG TWO-COLUMN LAYOUT
+   ========================================================================== */
+.catalog-layout {
+  display: grid;
+  grid-template-columns: 295px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.catalog-sidebar {
+  width: 100%;
+}
+
+.catalog-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0; /* Prevents overflow in grid child */
+}
+
+/* ==========================================================================
+   STATUS BAR & ACTIVE FILTER CHIPS
+   ========================================================================== */
+.catalog-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 14px 20px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e6f0e9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.status-count {
+  font-size: 0.94rem;
+  color: #4b5563;
+}
+
+.status-count strong {
+  color: #064e3b;
+  font-weight: 700;
+}
+
+.all-badge-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #047857;
+  background: #ecfdf5;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid #a7f3d0;
+}
+
+.all-chip-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #10b981;
+}
+
+.active-filter-chips {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip-label {
+  font-size: 0.84rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.active-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ecfdf5;
+  border: 1px solid #6ee7b7;
+  color: #065f46;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.12);
+  transition: all 0.2s ease;
+}
+
+.chip-cat {
+  color: #047857;
+}
+
+.chip-separator {
+  color: #10b981;
+  font-weight: 700;
+}
+
+.chip-subcat {
+  color: #064e3b;
+  font-weight: 700;
+}
+
+.chip-remove-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(16, 185, 129, 0.2);
+  border: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  color: #065f46;
+  font-size: 0.65rem;
+  cursor: pointer;
+  margin-left: 2px;
+  transition: all 0.2s ease;
+}
+
+.chip-remove-btn:hover {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.btn-clear-text {
+  background: transparent;
+  border: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #059669;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 2px 4px;
+  transition: color 0.2s ease;
+}
+
+.btn-clear-text:hover {
+  color: #064e3b;
+}
+
+/* ==========================================================================
+   PRODUCTS GRID
+   ========================================================================== */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: var(--spacing-lg);
+  gap: 24px;
 }
 
-@media (max-width: 480px) {
-  .products-grid {
+/* ==========================================================================
+   EMPTY STATE (NO PRODUCTS FOUND)
+   ========================================================================== */
+.no-products-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px dashed #6ee7b7;
+  padding: 48px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+}
+
+.no-products-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #ecfdf5;
+  color: #059669;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: 6px;
+}
+
+.no-products-title {
+  font-size: 1.3rem;
+  color: #064e3b;
+  font-weight: 700;
+}
+
+.no-products-text {
+  color: #64748b;
+  max-width: 400px;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.btn-reset-catalog {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(46, 125, 50, 0.25);
+}
+
+/* ==========================================================================
+   RESPONSIVE QUERIES
+   ========================================================================== */
+@media (max-width: 991px) {
+  .mobile-filter-trigger-wrap {
+    display: block;
+  }
+
+  .catalog-layout {
     grid-template-columns: 1fr;
-    padding-left: 20px;
-    padding-right: 20px;
+    gap: 20px;
+  }
+
+  .catalog-sidebar {
+    display: none;
+  }
+
+  .catalog-sidebar.mobile-visible {
+    display: block;
+    animation: fadeInDown 0.3s ease;
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
-.no-products {
-  text-align: center;
-  font-size: 1.2rem;
-  color: var(--color-text-light);
-  margin-top: var(--spacing-xl);
+@media (max-width: 640px) {
+  .catalog-page {
+    padding-top: 25px;
+  }
+
+  .catalog-page .page-title {
+    font-size: 1.9rem;
+  }
+
+  .catalog-page .title-icon {
+    font-size: 1.7rem;
+  }
+
+  .catalog-subtitle {
+    font-size: 0.92rem;
+  }
+
+  .catalog-status-bar {
+    padding: 12px 14px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
 }

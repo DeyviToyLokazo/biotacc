@@ -1,9 +1,31 @@
+export const CATEGORY_STRUCTURE = [
+  {
+    name: "Fertilizantes",
+    subcategories: [
+      "Biotacc suelo",
+      "Biosilix",
+      "Nitrorganico",
+      "Silmag-ok"
+    ]
+  },
+  {
+    name: "Foliares",
+    subcategories: [
+      "Bioestimulantes",
+      "Correctores nutricionales",
+      "Protección para cultivos",
+      "Complementos"
+    ]
+  }
+];
+
 export const products = [
   // Fertilizantes Orgánicos - Suelo / Edáficos (4 productos)
   {
     id: "granulado-2",
     name: "BIOTACC SUELO",
-    category: "Granulados",
+    category: "Fertilizantes",
+    subcategory: "Biotacc suelo",
     price: 90.0,
     image: "/images/products/granulado-2.png",
     description:
@@ -19,8 +41,8 @@ export const products = [
   {
     id: "granulado-3",
     name: "BIOSILIX",
-    category: "Granulados",
-    subcategory: "Fertilizante Edáfico",
+    category: "Fertilizantes",
+    subcategory: "Biosilix",
     price: 75.0,
     image: "/images/products/BIOSILIX.webp",
     description:
@@ -36,7 +58,8 @@ export const products = [
   {
     id: "granulado-4",
     name: "NITRORGÁNICO ESSENTIAL MICROMIX",
-    category: "Granulados",
+    category: "Fertilizantes",
+    subcategory: "Nitrorganico",
     price: 88.0,
     image: "/images/products/granulado-4.png",
     description:
@@ -52,7 +75,8 @@ export const products = [
   {
     id: "granulado-1",
     name: "SILMAG - PK",
-    category: "Granulados",
+    category: "Fertilizantes",
+    subcategory: "Silmag-ok",
     price: 85.0,
     image: "/images/products/granulado-1.png",
     description:
@@ -66,11 +90,12 @@ export const products = [
     pdf: "/documents/FICHA TECNICA SILMAG PK.pdf",
   },
 
-  // Foliares Orgánicos - Bioestimulantes y Correctores Nutricionales
+  // Foliares - Bioestimulantes (8 productos)
   {
     id: "foliar-10",
     name: "AMINO PLUS",
     category: "Foliares",
+    subcategory: "Bioestimulantes",
     price: 45.0,
     image: "/images/products/AMINOPLUS.webp",
     description:
@@ -87,7 +112,7 @@ export const products = [
     id: "foliar-14",
     name: "BIOSILIX",
     category: "Foliares",
-    subcategory: "Bioestimulante Vegetal",
+    subcategory: "Bioestimulantes",
     price: 45.0,
     image: "/images/products/BIOSILIX.webp",
     description:
@@ -104,6 +129,7 @@ export const products = [
     id: "foliar-3",
     name: "CITOQ TACC",
     category: "Foliares",
+    subcategory: "Bioestimulantes",
     price: 45.0,
     image: "/images/products/CITOQ TACC.webp",
     description:
@@ -120,6 +146,7 @@ export const products = [
     id: "foliar-impulsor",
     name: "IMPULSOR",
     category: "Foliares",
+    subcategory: "Bioestimulantes",
     price: 45.0,
     image: "/images/products/IMPULSOR.webp",
     description:
@@ -136,6 +163,7 @@ export const products = [
     id: "foliar-4",
     name: "RUTACC MAX",
     category: "Foliares",
+    subcategory: "Bioestimulantes",
     price: 45.0,
     image: "/images/products/RUTACC-MAX.webp",
     description:
@@ -152,6 +180,7 @@ export const products = [
     id: "foliar-5",
     name: "SPIGAL",
     category: "Foliares",
+    subcategory: "Bioestimulantes",
     price: 45.0,
     image: "/images/products/SPIGAL.webp",
     description:
@@ -168,6 +197,7 @@ export const products = [
     id: "foliar-6",
     name: "STIMULUS",
     category: "Foliares",
+    subcategory: "Bioestimulantes",
     price: 45.0,
     image: "/images/products/STIMULUS.webp",
     description:
@@ -184,6 +214,7 @@ export const products = [
     id: "foliar-7",
     name: "BIOTACC TRIHORMONAL",
     category: "Foliares",
+    subcategory: "Bioestimulantes",
     price: 45.0,
     image: "/images/products/TRIHORMONAL.webp",
     description:
@@ -196,10 +227,13 @@ export const products = [
     ],
     pdf: "/documents/FT TRIHORMONAL.pdf",
   },
+
+  // Foliares - Correctores Nutricionales (8 productos)
   {
     id: "foliar-15",
     name: "FÓSFORO 45%",
     category: "Foliares",
+    subcategory: "Correctores nutricionales",
     price: 45.0,
     image: "/images/products/FOSFORO-45_.webp",
     description:
@@ -216,6 +250,7 @@ export const products = [
     id: "foliar-9",
     name: "POTASIO 0-0-40",
     category: "Foliares",
+    subcategory: "Correctores nutricionales",
     price: 45.0,
     image: "/images/products/POTASIO-0-0-40.webp",
     description:
@@ -232,6 +267,7 @@ export const products = [
     id: "foliar-12",
     name: "COMBO PK (28/45)",
     category: "Foliares",
+    subcategory: "Correctores nutricionales",
     price: 45.0,
     image: "/images/products/COMBO PK 28_45.webp",
     description:
@@ -248,6 +284,7 @@ export const products = [
     id: "foliar-calcio-boro-zinc",
     name: "CALCIO-BORO-ZINC",
     category: "Foliares",
+    subcategory: "Correctores nutricionales",
     price: 45.0,
     image: "/images/products/CALCIO-BORO-ZINC.webp",
     description:
@@ -264,6 +301,7 @@ export const products = [
     id: "foliar-11",
     name: "BIOMAG",
     category: "Foliares",
+    subcategory: "Correctores nutricionales",
     price: 45.0,
     image: "/images/products/BIOMAG.webp",
     description:
@@ -280,6 +318,7 @@ export const products = [
     id: "foliar-biozinc",
     name: "BIOZINC",
     category: "Foliares",
+    subcategory: "Correctores nutricionales",
     price: 45.0,
     image: "/images/products/BIOZINC.webp",
     description:
@@ -296,6 +335,7 @@ export const products = [
     id: "foliar-8",
     name: "HUMITACC",
     category: "Foliares",
+    subcategory: "Correctores nutricionales",
     price: 45.0,
     image: "/images/products/HUMITACC.webp",
     description:
@@ -312,6 +352,7 @@ export const products = [
     id: "foliar-1",
     name: "NUTRITACC 20-20-20",
     category: "Foliares",
+    subcategory: "Correctores nutricionales",
     price: 45.0,
     image: "/images/products/NUTRITACC-20-20-20.webp",
     description:
@@ -325,11 +366,12 @@ export const products = [
     pdf: "/documents/FT NUTRITACC 20-20-20.pdf",
   },
 
-  // Protección de Cultivos (3 productos)
+  // Foliares - Protección para cultivos (3 productos)
   {
     id: "foliar-biofosfito",
     name: "BIOFOSFITO-K",
-    category: "Protección",
+    category: "Foliares",
+    subcategory: "Protección para cultivos",
     price: 55.0,
     image: "/images/products/BIOFOSFITO-K.webp",
     description:
@@ -345,7 +387,8 @@ export const products = [
   {
     id: "foliar-2",
     name: "BIOCUB",
-    category: "Protección",
+    category: "Foliares",
+    subcategory: "Protección para cultivos",
     price: 45.0,
     image: "/images/products/BIOCUB.webp",
     description:
@@ -361,7 +404,8 @@ export const products = [
   {
     id: "foliar-copeo",
     name: "COPEO",
-    category: "Protección",
+    category: "Foliares",
+    subcategory: "Protección para cultivos",
     price: 50.0,
     image: "/images/products/COPEO.webp",
     description:
@@ -375,11 +419,12 @@ export const products = [
     pdf: "/documents/FT COPEO.pdf",
   },
 
-  // Complementos Agrícolas (2 productos)
+  // Foliares - Complementos (2 productos)
   {
     id: "complemento-bioadhiere",
     name: "BIOADHIERE",
-    category: "Complementos",
+    category: "Foliares",
+    subcategory: "Complementos",
     price: 35.0,
     image: "/images/products/BIOADHIERE.webp",
     description:
@@ -396,7 +441,8 @@ export const products = [
   {
     id: "foliar-16",
     name: "FULL ACIDIC",
-    category: "Complementos",
+    category: "Foliares",
+    subcategory: "Complementos",
     price: 35.0,
     image: "/images/products/FULL-ACIDIC-PH.webp",
     description:

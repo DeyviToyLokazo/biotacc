@@ -104,34 +104,55 @@ const About = () => {
       <section className="section bg-light">
         <div className="container">
           <div className="mission-vision-grid">
-            <div className="mission-card">
-              <FaBullseye className="mission-icon" />
-              <h2><Typewriter text="Nuestra Misión" delay={100} /></h2>
-              <motion.p
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={fadeInUp}
-              >
-                Desarrollar, producir y comercializar insumos orgánicos orientados a mejorar la salud del suelo 
-                y el adecuado desarrollo de los cultivos. Operamos bajo un enfoque técnico y científico, 
-                brindando soluciones confiables y acompañamiento técnico al productor agrícola.
-              </motion.p>
+            <div className="mission-card mission-card-mision">
+              <div 
+                className="mission-bg" 
+                style={{ backgroundImage: `url('/images/mision.jpg')` }}
+                aria-hidden="true"
+              ></div>
+              <div className="mission-overlay" aria-hidden="true"></div>
+              <div className="mission-content">
+                <div className="mission-icon-wrapper">
+                  <FaBullseye className="mission-icon" />
+                </div>
+                <h2><Typewriter text="Nuestra Misión" delay={100} /></h2>
+                <motion.p
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                  variants={fadeInUp}
+                >
+                  Desarrollar, producir y comercializar insumos orgánicos orientados a mejorar la salud del suelo 
+                  y el adecuado desarrollo de los cultivos. Operamos bajo un enfoque técnico y científico, 
+                  brindando soluciones confiables y acompañamiento técnico al productor agrícola.
+                </motion.p>
+              </div>
             </div>
-            <div className="mission-card">
-              <FaLightbulb className="mission-icon" />
-              <h2><Typewriter text="Nuestra Visión" delay={100} /></h2>
-              <motion.p
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={fadeInUp}
-              >
-                Ser reconocidos a nivel nacional e internacional como líderes en soluciones orgánicas y sostenibles 
-                para la agricultura, transformando prácticas agrícolas mediante innovación técnica y científica, 
-                elevando la productividad de los suelos y cultivos, y contribuyendo a un agro más rentable, 
-                resiliente y ecológico para las futuras generaciones.
-              </motion.p>
+            
+            <div className="mission-card mission-card-vision">
+              <div 
+                className="mission-bg" 
+                style={{ backgroundImage: `url('/images/vision.jpg')` }}
+                aria-hidden="true"
+              ></div>
+              <div className="mission-overlay" aria-hidden="true"></div>
+              <div className="mission-content">
+                <div className="mission-icon-wrapper">
+                  <FaLightbulb className="mission-icon" />
+                </div>
+                <h2><Typewriter text="Nuestra Visión" delay={100} /></h2>
+                <motion.p
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                  variants={fadeInUp}
+                >
+                  Ser reconocidos a nivel nacional e internacional como líderes en soluciones orgánicas y sostenibles 
+                  para la agricultura, transformando prácticas agrícolas mediante innovación técnica y científica, 
+                  elevando la productividad de los suelos y cultivos, y contribuyendo a un agro más rentable, 
+                  resiliente y ecológico para las futuras generaciones.
+                </motion.p>
+              </div>
             </div>
           </div>
         </div>

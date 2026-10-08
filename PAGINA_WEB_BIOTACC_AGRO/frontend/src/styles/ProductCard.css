@@ -1,22 +1,48 @@
+/* ==========================================================================
+   PRODUCT CARD - BIOTACC AGRO
+   ========================================================================== */
+
 .product-card {
   background: var(--color-secondary);
-  border-radius: var(--border-radius);
+  border-radius: 16px;
   box-shadow: var(--shadow-sm);
   overflow: hidden;
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--color-primary);
+  border: 1px solid rgba(46, 125, 50, 0.22);
+  position: relative;
+  height: 100%;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(46, 125, 50, 0.15);
 }
 
+/* ══════════════════════════════════════════════
+   PREMIUM GOLD CARD (CATEGORIA FERTILIZANTES)
+   ══════════════════════════════════════════════ */
+.product-card--gold {
+  border: 2px solid #c9a227;
+  background: linear-gradient(165deg, #fffef5 0%, #ffffff 50%, #fffdf0 100%);
+  box-shadow: 0 6px 20px rgba(201, 162, 39, 0.16);
+}
+
+.product-card--gold:hover {
+  transform: translateY(-8px);
+  border-color: #e8b800;
+  box-shadow: 0 16px 38px rgba(201, 162, 39, 0.3);
+}
+
+.product-card--gold .product-image-container {
+  background: linear-gradient(135deg, #fdf8e1 0%, #f6f0cf 100%);
+}
+
+/* Image Container */
 .product-image-container {
   position: relative;
-  height: 200px; /* Fixed height for image area */
+  height: 200px;
   background-color: #f0f0f0;
   overflow: hidden;
 }
@@ -32,70 +58,142 @@
   transform: scale(1.05);
 }
 
+/* Premium Badge */
+.product-premium-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: linear-gradient(135deg, #c9a227 0%, #e8b800 60%, #b8860b 100%);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 3px 10px rgba(201, 162, 39, 0.45);
+  z-index: 2;
+  text-transform: uppercase;
+}
+
+.premium-badge-icon {
+  font-size: 0.78rem;
+  color: #ffffff;
+}
+
+/* Product Category Badge */
 .product-category {
   position: absolute;
   top: 10px;
   right: 10px;
   background-color: var(--color-primary);
   color: white;
-  padding: 4px 8px;
-  border-radius: var(--border-radius-sm);
-  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
   font-weight: 600;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
+.product-category--gold {
+  background: linear-gradient(135deg, #8b6914 0%, #c9a227 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 3px 10px rgba(139, 105, 20, 0.35);
+}
+
+/* Product Info */
 .product-info {
-  padding: var(--spacing-md);
+  padding: 16px 14px 14px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 
 .product-name {
-  font-size: 1.1rem;
-  margin-bottom: var(--spacing-sm);
+  font-size: 1.02rem;
+  margin-bottom: 14px;
   color: var(--color-text);
   line-height: 1.3;
+  font-weight: 700;
 }
 
+.product-card--gold .product-name {
+  color: #2c2512;
+}
 
-
+/* ══════════════════════════════════════════════
+   ACTIONS & BUTTONS
+   ══════════════════════════════════════════════ */
 .product-actions {
   margin-top: auto;
   display: flex;
-  gap: var(--spacing-sm);
-  flex-wrap: wrap;
+  gap: 8px;
+  align-items: stretch;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 8px 16px;
-  border-radius: var(--border-radius);
+  border-radius: 10px;
   font-weight: 600;
-  font-size: 0.9rem;
   text-align: center;
   flex: 1;
+  transition: all 0.22s ease;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.btn-primary {
+/* Consultar Button (Letra más chica) */
+.btn-consultar {
+  font-size: 0.8rem;
+  padding: 8px 10px;
+  gap: 6px;
   background-color: var(--color-primary);
-  color: white;
+  color: #ffffff;
 }
 
-.btn-primary:hover {
+.btn-consultar:hover {
   background-color: var(--color-primary-dark);
 }
 
-.btn-outline {
+.product-card--gold .btn-consultar {
+  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+}
+
+.product-card--gold .btn-consultar:hover {
+  background: linear-gradient(135deg, #144618 0%, #1e6b22 100%);
+}
+
+/* Ver Detalle Button (Especialmente más chico como solicitado) */
+.btn-detail {
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  padding: 8px 6px;
+  white-space: nowrap;
   background-color: transparent;
-  border: 1px solid var(--color-primary);
+  border: 1.5px solid var(--color-primary);
   color: var(--color-primary);
 }
 
-.btn-outline:hover {
+.btn-detail:hover {
   background-color: var(--color-primary);
-  color: white;
+  color: #ffffff;
+}
+
+.product-card--gold .btn-detail {
+  border-color: #c9a227;
+  color: #8b6914;
+  background-color: #fffef8;
+}
+
+.product-card--gold .btn-detail:hover {
+  background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+  border-color: #b8860b;
+  color: #ffffff;
 }
