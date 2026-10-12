@@ -53,7 +53,7 @@ ul {
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 10px;
+    padding: 0 16px;
     width: 100%;
     max-width: 100%;
   }
