@@ -1,8 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { FaBars, FaTimes, FaLeaf, FaSearch } from 'react-icons/fa';
+import { FaBars, FaTimes, FaLeaf, FaSearch, FaHome, FaUsers, FaBoxOpen, FaHandsHelping, FaEnvelope } from 'react-icons/fa';
 import { products } from '../data/products';
 import '../styles/Header.css';
+
+const navItems = [
+  { to: '/', label: 'Inicio', icon: FaHome },
+  { to: '/nosotros', label: 'Nosotros', icon: FaUsers },
+  { to: '/productos', label: 'Productos', icon: FaBoxOpen },
+  { to: '/servicios', label: 'Servicios', icon: FaHandsHelping },
+  { to: '/contacto', label: 'Contacto', icon: FaEnvelope },
+];
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,21 +71,14 @@ const Header = () => {
         {/* Navigation Menu - In the middle */}
         <nav className="nav-menu-desktop">
           <ul className="nav-list">
-            <li className="nav-item">
-              <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Inicio</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to="/nosotros" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Nosotros</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to="/productos" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Productos</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to="/servicios" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Servicios</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to="/contacto" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Contacto</NavLink>
-            </li>
+            {navItems.map(({ to, label, icon: Icon }) => (
+              <li className="nav-item" key={to}>
+                <NavLink to={to} end={to === '/'} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+                  <Icon className="nav-link-icon" />
+                  <span>{label}</span>
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </nav>
 
@@ -126,21 +127,14 @@ const Header = () => {
         {/* Mobile Navigation */}
         <nav className={`nav-menu-mobile ${isOpen ? 'active' : ''}`}>
           <ul className="nav-list">
-            <li className="nav-item">
-              <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={toggleMenu}>Inicio</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to="/nosotros" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={toggleMenu}>Nosotros</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to="/productos" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={toggleMenu}>Productos</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to="/servicios" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={toggleMenu}>Servicios</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to="/contacto" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={toggleMenu}>Contacto</NavLink>
-            </li>
+            {navItems.map(({ to, label, icon: Icon }) => (
+              <li className="nav-item" key={to}>
+                <NavLink to={to} end={to === '/'} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={toggleMenu}>
+                  <Icon className="nav-link-icon" />
+                  <span>{label}</span>
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>

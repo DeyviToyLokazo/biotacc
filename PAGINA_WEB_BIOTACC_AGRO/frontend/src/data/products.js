@@ -5,7 +5,7 @@ export const CATEGORY_STRUCTURE = [
       "Biotacc suelo",
       "Biosilix",
       "Nitrorganico",
-      "Silmag-ok"
+      "Silmag-PK"
     ]
   },
   {
@@ -76,7 +76,7 @@ export const products = [
     id: "granulado-1",
     name: "SILMAG - PK",
     category: "Fertilizantes",
-    subcategory: "Silmag-ok",
+    subcategory: "Silmag-PK",
     price: 85.0,
     image: "/images/products/granulado-1.webp",
     description:
