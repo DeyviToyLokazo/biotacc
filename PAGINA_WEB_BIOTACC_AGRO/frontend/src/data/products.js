@@ -1,6 +1,6 @@
 export const CATEGORY_STRUCTURE = [
   {
-    name: "Fertilizantes",
+    name: "Granulados",
     subcategories: [
       "Biotacc suelo",
       "Biosilix",
@@ -20,11 +20,11 @@ export const CATEGORY_STRUCTURE = [
 ];
 
 export const products = [
-  // Fertilizantes Orgánicos - Suelo / Edáficos (4 productos)
+  // Granulados Orgánicos - Suelo / Edáficos (4 productos)
   {
     id: "granulado-2",
     name: "BIOTACC SUELO",
-    category: "Fertilizantes",
+    category: "Granulados",
     subcategory: "Biotacc suelo",
     price: 90.0,
     image: "/images/products/granulado-2.webp",
@@ -41,7 +41,7 @@ export const products = [
   {
     id: "granulado-3",
     name: "BIOSILIX",
-    category: "Fertilizantes",
+    category: "Granulados",
     subcategory: "Biosilix",
     price: 75.0,
     image: "/images/products/BIOSILIX.webp",
@@ -58,7 +58,7 @@ export const products = [
   {
     id: "granulado-4",
     name: "NITRORGÁNICO ESSENTIAL MICROMIX",
-    category: "Fertilizantes",
+    category: "Granulados",
     subcategory: "Nitrorganico",
     price: 88.0,
     image: "/images/products/granulado-4.webp",
@@ -75,7 +75,7 @@ export const products = [
   {
     id: "granulado-1",
     name: "SILMAG - PK",
-    category: "Fertilizantes",
+    category: "Granulados",
     subcategory: "Silmag-PK",
     price: 85.0,
     image: "/images/products/granulado-1.webp",
@@ -114,7 +114,7 @@ export const products = [
     category: "Foliares",
     subcategory: "Bioestimulantes",
     price: 45.0,
-    image: "/images/products/BIOSILIX.webp",
+    image: "/images/products/BIOSILIX-2.webp",
     description:
       "Bioestimulante vegetal a base de silicio que fortalece las plantas y mejora su resistencia a factores adversos.",
     benefits: [

@@ -226,7 +226,7 @@ const Services = () => {
               <br />
               Deben ajustarse a las condiciones del suelo, los requerimientos del cultivo y los objetivos de producción.
               <br />
-              Para establecer un programa de fertilización específico, se recomienda realizar un diagnóstico nutricional.
+              Para establecer un programa de fertilización específico, se recomienda realizar un diagnóstico nutricional de su cultivo.
             </p>
           </motion.div>
         </div>

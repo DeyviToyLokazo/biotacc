@@ -5,7 +5,7 @@ import '../styles/ProductCard.css';
 
 const ProductCard = ({ product }) => {
   const { id, name, category, subcategory, image } = product;
-  const isFertilizante = category === 'Fertilizantes';
+  const isFertilizante = category === 'Granulados' || category === 'Fertilizantes';
   
   // WhatsApp Message
   const message = `Hola, estoy interesado en el producto: ${name} (Categoría: ${category}${subcategory ? ` - ${subcategory}` : ''}).`;

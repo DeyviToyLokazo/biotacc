@@ -22,8 +22,8 @@ const ProductDetail = () => {
   const message = `Hola, quisiera más información sobre: ${product.name}`;
   const whatsappLink = `https://wa.me/51934408500?text=${encodeURIComponent(message)}`;
 
-  // Los fertilizantes se muestran como línea Premium (igual que en ProductCard)
-  const isPremium = product.category === 'Fertilizantes';
+  // Los granulados se muestran como línea Premium (igual que en ProductCard)
+  const isPremium = product.category === 'Granulados' || product.category === 'Fertilizantes';
 
   if (isPremium) {
     return (

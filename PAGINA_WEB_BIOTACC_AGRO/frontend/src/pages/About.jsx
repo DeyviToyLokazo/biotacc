@@ -7,7 +7,7 @@ const Typewriter = ({ text, delay = 100 }) => {
   const [currentText, setCurrentText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showCursor, setShowCursor] = useState(true);
-  
+
   // Scroll trigger logic
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 }); // Trigger when 50% visible
@@ -37,8 +37,8 @@ const About = () => {
   // Animation variants for paragraphs
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.8, ease: "easeOut", delay: 0.5 }
     }
@@ -58,8 +58,8 @@ const About = () => {
 
   const plantCard = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.8, ease: "easeOut" }
     }
@@ -70,7 +70,7 @@ const About = () => {
       <section className="section intro-section">
         <div className="container">
           <h1 className="page-title"><Typewriter text="Nosotros" delay={100} /></h1>
-          
+
           <div className="about-content">
             <div className="about-text">
               <h2><Typewriter text="¿Quiénes Somos?" delay={100} /></h2>
@@ -80,7 +80,7 @@ const About = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 variants={fadeInUp}
               >
-                BIOTACC es una empresa especializada en la elaboración y comercialización de insumos orgánicos, 
+                BIOTACC es una empresa especializada en la elaboración y comercialización de insumos orgánicos,
                 orientada a mejorar la salud del suelo y el desarrollo natural de los cultivos.
               </motion.p>
               <motion.p
@@ -89,13 +89,13 @@ const About = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 variants={fadeInUp}
               >
-                Fundada y liderada por el ingeniero agrónomo <strong>César Palacios Agurto</strong>, 
-                la empresa desarrolla sus productos bajo un enfoque técnico y científico, 
+                Fundada y liderada por el ingeniero agrónomo <strong>César Palacios Agurto</strong>,
+                la empresa desarrolla sus productos bajo un enfoque técnico y científico,
                 promoviendo una agricultura sostenible y responsable con el medio ambiente.
               </motion.p>
             </div>
             <div className="about-image">
-               <img src="/images/founder.png" alt="Fundador BIOTACC AGRO" className="founder-img" />
+              <img src="/images/founder.png" alt="Fundador BIOTACC AGRO" className="founder-img" />
             </div>
           </div>
         </div>
@@ -105,8 +105,8 @@ const About = () => {
         <div className="container">
           <div className="mission-vision-grid">
             <div className="mission-card mission-card-mision">
-              <div 
-                className="mission-bg" 
+              <div
+                className="mission-bg"
                 style={{ backgroundImage: `url('/images/mision.jpg')` }}
                 aria-hidden="true"
               ></div>
@@ -122,16 +122,16 @@ const About = () => {
                   viewport={{ once: true, amount: 0.3 }}
                   variants={fadeInUp}
                 >
-                  Desarrollar, producir y comercializar insumos orgánicos orientados a mejorar la salud del suelo 
-                  y el adecuado desarrollo de los cultivos. Operamos bajo un enfoque técnico y científico, 
+                  Desarrollar, producir y comercializar insumos orgánicos orientados a mejorar la salud del suelo
+                  y el adecuado desarrollo de los cultivos. Operamos bajo un enfoque técnico y científico,
                   brindando soluciones confiables y acompañamiento técnico al productor agrícola.
                 </motion.p>
               </div>
             </div>
-            
+
             <div className="mission-card mission-card-vision">
-              <div 
-                className="mission-bg" 
+              <div
+                className="mission-bg"
                 style={{ backgroundImage: `url('/images/vision.jpg')` }}
                 aria-hidden="true"
               ></div>
@@ -147,9 +147,9 @@ const About = () => {
                   viewport={{ once: true, amount: 0.3 }}
                   variants={fadeInUp}
                 >
-                  Ser reconocidos a nivel nacional e internacional como líderes en soluciones orgánicas y sostenibles 
-                  para la agricultura, transformando prácticas agrícolas mediante innovación técnica y científica, 
-                  elevando la productividad de los suelos y cultivos, y contribuyendo a un agro más rentable, 
+                  Ser reconocidos a nivel nacional e internacional como líderes en soluciones orgánicas y sostenibles
+                  para la agricultura, transformando prácticas agrícolas mediante innovación técnica y científica,
+                  elevando la productividad de los suelos y cultivos, y contribuyendo a un agro más rentable,
                   resiliente y ecológico para las futuras generaciones.
                 </motion.p>
               </div>
@@ -159,8 +159,8 @@ const About = () => {
       </section>
 
       <section className="section container">
-        <h2 className="plants-title"><Typewriter text="Nuestras Sedes" delay={100} /></h2>
-        <motion.p 
+        <h2 className="plants-title"><Typewriter text="Plantas de Producción" delay={100} /></h2>
+        <motion.p
           className="section-subtitle"
           initial="hidden"
           whileInView="visible"
@@ -169,8 +169,8 @@ const About = () => {
         >
           Contamos con dos plantas de producción donde elaboramos nuestros insumos y brindamos atención técnica.
         </motion.p>
-        
-        <motion.div 
+
+        <motion.div
           className="plants-grid"
           initial="hidden"
           whileInView="visible"
@@ -192,7 +192,7 @@ const About = () => {
 
       <section className="section container">
         <h2 className="plants-title"><Typewriter text="Certificaciones" delay={100} /></h2>
-        <motion.p 
+        <motion.p
           className="section-subtitle text-center"
           initial="hidden"
           whileInView="visible"
@@ -201,8 +201,8 @@ const About = () => {
         >
           Nuestros productos cuentan con certificaciones que garantizan su calidad y cumplimiento normativo.
         </motion.p>
-        
-        <motion.div 
+
+        <motion.div
           className="certifications-grid"
           initial="hidden"
           whileInView="visible"
@@ -214,31 +214,31 @@ const About = () => {
             <FaAward className="cert-icon" />
             <h3>Certificación Orgánica</h3>
             <p>
-              Certificación otorgada por <strong>Kiwa - Costa Rica</strong>, 
+              Certificación otorgada por <strong>Kiwa - Costa Rica</strong>,
               conforme a los requisitos técnicos y normativos aplicables para productos orgánicos.
             </p>
 
           </motion.div>
-          
+
           <motion.div className="certification-card" variants={plantCard}>
             <img src="/images/certificacion-2.jpg" alt="Certificación 2" className="cert-img" />
             <FaAward className="cert-icon" />
             <h3>Certificación de Calidad</h3>
             <p>
-              Certificación de calidad otorgada por <strong>Kiwa - Costa Rica</strong>, 
+              Certificación de calidad otorgada por <strong>Kiwa - Costa Rica</strong>,
               validando nuestros procesos de producción y control de calidad.
             </p>
 
           </motion.div>
-          
+
 
         </motion.div>
-        
+
       </section>
 
       <section className="section container location-section">
         <h2 className="plants-title"><Typewriter text="Ubicación Central" delay={100} /></h2>
-        <motion.p 
+        <motion.p
           className="section-subtitle text-center"
           initial="hidden"
           whileInView="visible"
@@ -248,13 +248,13 @@ const About = () => {
           Visítanos en nuestra sede principal ubicada en Catacaos, Piura.
         </motion.p>
         <div className="map-container">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d7925.897403951891!2d-79.83588753436842!3d-6.653280784111774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMzknNDguMCJTIDc5wrA0OCc0My41Ilc!5e0!3m2!1ses!2spe!4v1770685583147!5m2!1ses!2spe" 
-            width="100%" 
-            height="450" 
-            style={{ border: 0, borderRadius: '15px' }} 
-            allowFullScreen="" 
-            loading="lazy" 
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d7925.897403951891!2d-79.83588753436842!3d-6.653280784111774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMzknNDguMCJTIDc5wrA0OCc0My41Ilc!5e0!3m2!1ses!2spe!4v1770685583147!5m2!1ses!2spe"
+            width="100%"
+            height="450"
+            style={{ border: 0, borderRadius: '15px' }}
+            allowFullScreen=""
+            loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Google Maps - BIOTACC AGRO"
           ></iframe>

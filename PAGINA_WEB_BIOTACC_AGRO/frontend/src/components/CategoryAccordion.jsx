@@ -22,7 +22,7 @@ const CategoryAccordion = ({
 }) => {
   // Mantener abiertas las secciones por defecto o la que esté seleccionada
   const [openSections, setOpenSections] = useState({
-    Fertilizantes: true,
+    Granulados: true,
     Foliares: true
   });
 
@@ -46,6 +46,7 @@ const CategoryAccordion = ({
 
   const getCategoryIcon = (name) => {
     switch (name) {
+      case 'Granulados':
       case 'Fertilizantes':
         return <FaSeedling className="cat-icon" />;
       case 'Foliares':

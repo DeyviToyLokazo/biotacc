@@ -1,13 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaMobileAlt, FaUser, FaCommentDots } from 'react-icons/fa';
-import { motion, useInView } from 'framer-motion';
+import {
+  FaPhone,
+  FaEnvelope,
+  FaWhatsapp,
+  FaUser,
+  FaCommentDots,
+  FaMobileAlt,
+  FaPaperPlane,
+  FaLeaf,
+  FaBolt,
+  FaUserTie,
+  FaSeedling,
+  FaCheckCircle,
+  FaExclamationCircle,
+  FaArrowRight
+} from 'react-icons/fa';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
 import '../styles/Contact.css';
 
 const Typewriter = ({ text, delay = 100 }) => {
   const [currentText, setCurrentText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showCursor, setShowCursor] = useState(true);
-  
+
   // Scroll trigger logic
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
@@ -32,8 +47,45 @@ const Typewriter = ({ text, delay = 100 }) => {
   );
 };
 
+// Quick contact channels
+const channels = [
+  {
+    id: 'contact-phone',
+    href: 'tel:+51934408500',
+    icon: <FaPhone />,
+    title: 'Llámanos',
+    value: '+51 934 408 500',
+    cta: 'Llamar ahora',
+    variant: 'phone'
+  },
+  {
+    id: 'contact-whatsapp',
+    href: 'https://wa.me/51934408500',
+    icon: <FaWhatsapp />,
+    title: 'WhatsApp',
+    value: '+51 934 408 500',
+    cta: 'Iniciar chat',
+    variant: 'whatsapp',
+    external: true
+  },
+  {
+    id: 'contact-email',
+    href: 'mailto:biotaccagrosac@biotacc.com',
+    icon: <FaEnvelope />,
+    title: 'Correo',
+    value: 'biotaccagrosac@biotacc.com',
+    cta: 'Escribir correo',
+    variant: 'email'
+  }
+];
+
+const benefits = [
+  { icon: <FaBolt />, title: 'Respuesta rápida', text: 'Atendemos tu consulta a la brevedad posible.' },
+  { icon: <FaUserTie />, title: 'Asesoría técnica', text: 'Especialistas que entienden tu cultivo.' },
+  { icon: <FaSeedling />, title: 'Soluciones a medida', text: 'Productos adecuados para cada etapa.' }
+];
+
 const Contact = () => {
-  // ... (existing state and handlers)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -54,27 +106,6 @@ const Contact = () => {
     }));
   };
 
-  const handleServerResponse = (ok, msg) => {
-    if (ok) {
-      setStatus({
-        submitting: false,
-        info: { error: false, msg: msg }
-      });
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-      });
-      openWhatsApp();
-    } else {
-      setStatus({
-        submitting: false,
-        info: { error: true, msg: msg }
-      });
-    }
-  };
-
   const openWhatsApp = () => {
     const phoneNumber = "51934408500";
     const waMessage = `Hola BIOTACC AGRO, mi nombre es ${formData.name}. 
@@ -87,12 +118,33 @@ Consulta: ${formData.message}`;
     window.open(waUrl, '_blank');
   };
 
+  const handleServerResponse = (ok, msg) => {
+    if (ok) {
+      setStatus({
+        submitting: false,
+        info: { error: false, msg: msg }
+      });
+      openWhatsApp();
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+    } else {
+      setStatus({
+        submitting: false,
+        info: { error: true, msg: msg }
+      });
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus({ ...status, submitting: true });
 
-    const FORMSPREE_ID = "mkoowllq"; 
-    
+    const FORMSPREE_ID = "mkoowllq";
+
     try {
       const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
         method: "POST",
@@ -118,156 +170,205 @@ Consulta: ${formData.message}`;
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.4,
-        delayChildren: 0.2
-      }
+      transition: { staggerChildren: 0.15, delayChildren: 0.1 }
     }
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
+      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
     }
   };
+
+  const fields = [
+    { name: 'name', type: 'text', label: 'Tu nombre', icon: <FaUser /> },
+    { name: 'email', type: 'email', label: 'Tu correo', icon: <FaEnvelope /> },
+    { name: 'phone', type: 'tel', label: 'Tu celular', icon: <FaMobileAlt /> }
+  ];
 
   return (
     <div className="contact-page">
-      <section className="section container">
-        <h1 className="page-title">
-          <FaMobileAlt className="title-icon" /> <Typewriter text="Contáctanos" delay={100} />
-        </h1>
-        
-        <motion.div 
-          className="contact-grid"
+      {/* Animated background */}
+      <div className="ct-bg" aria-hidden="true">
+        <span className="ct-orb ct-orb-1" />
+        <span className="ct-orb ct-orb-2" />
+        <span className="ct-orb ct-orb-3" />
+        <div className="ct-grid-pattern" />
+        {[...Array(8)].map((_, i) => (
+          <FaLeaf key={i} className={`ct-leaf ct-leaf-${i + 1}`} />
+        ))}
+      </div>
+
+      <section className="ct-wrapper container">
+        {/* Hero header */}
+        <motion.header
+          className="ct-hero"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          <span className="ct-badge">
+            <span className="ct-pulse-dot" /> Estamos en línea para ayudarte
+          </span>
+          <h1 className="page-title ct-title">
+            <Typewriter text="Contáctanos" delay={100} />
+          </h1>
+          <p className="ct-subtitle">
+            Estamos listos para asesorarte. Escríbenos o llámanos, y juntos
+            hagamos crecer tu cultivo con <strong>BIOTACC AGRO</strong>.
+          </p>
+        </motion.header>
+
+        {/* Quick channels */}
+        <motion.div
+          className="ct-channels"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {/* Info Side */}
-          <motion.div className="contact-info" variants={cardVariants}>
-            <h2>Información de Contacto</h2>
-            <p className="contact-intro">Estamos listos para asesorarte. Escríbenos o visítanos.</p>
-            
-            <div className="sedes-container">
-              {/* SEDE ÚNICA - PIURA */}
-              <div className="sede-block">
-                <h3 className="sede-title">Sede Piura</h3>
-                <ul className="contact-list">
-                  <li>
-                    <a href="tel:+51934408500" className="contact-link" id="contact-phone">
-                      <div className="icon-circle"><FaPhone /></div>
-                      <div>
-                        <strong>Llámanos</strong>
-                        <p>+51 934 408 500</p>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="https://wa.me/51934408500" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="contact-link" 
-                      id="contact-whatsapp"
-                    >
-                      <div className="icon-circle"><FaWhatsapp /></div>
-                      <div>
-                        <strong>WhatsApp</strong>
-                        <p>+51 934 408 500</p>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="mailto:biotaccagrosac@biotacc.com" className="contact-link" id="contact-email">
-                      <div className="icon-circle"><FaEnvelope /></div>
-                      <div>
-                        <strong>Correo</strong>
-                        <p>biotaccagrosac@biotacc.com</p>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="https://www.google.com/maps/search/?api=1&query=Fundo+Mundaca+Catacaos+Piura" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="contact-link" 
-                      id="contact-location"
-                    >
-                      <div className="icon-circle"><FaMapMarkerAlt /></div>
-                      <div>
-                        <strong>Ubicación</strong>
-                        <p>Fundo Mundaca S/N, Catacaos - Piura</p>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
+          {channels.map((c) => (
+            <motion.a
+              key={c.id}
+              id={c.id}
+              href={c.href}
+              className={`ct-channel ct-channel--${c.variant}`}
+              variants={itemVariants}
+              whileHover={{ y: -10 }}
+              whileTap={{ scale: 0.97 }}
+              {...(c.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            >
+              <span className="ct-channel-glow" />
+              <span className="ct-channel-icon">{c.icon}</span>
+              <span className="ct-channel-title">{c.title}</span>
+              <span className="ct-channel-value">{c.value}</span>
+              <span className="ct-channel-cta">
+                {c.cta} <FaArrowRight />
+              </span>
+            </motion.a>
+          ))}
+        </motion.div>
+
+        {/* Main grid */}
+        <motion.div
+          className="ct-main"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+        >
+          {/* Info panel */}
+          <motion.aside className="ct-info" variants={itemVariants}>
+            <h2>¿Por qué contactarnos?</h2>
+            <p className="ct-info-text">
+              Nuestro equipo te acompaña en cada etapa de tu producción con
+              soluciones agrícolas confiables.
+            </p>
+
+            <ul className="ct-benefits">
+              {benefits.map((b, i) => (
+                <motion.li
+                  key={b.title}
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 + i * 0.15, duration: 0.5 }}
+                >
+                  <span className="ct-benefit-icon">{b.icon}</span>
+                  <div>
+                    <strong>{b.title}</strong>
+                    <p>{b.text}</p>
+                  </div>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.aside>
+
+          {/* Form */}
+          <motion.div className="ct-form-card" variants={itemVariants}>
+            <div className="ct-form-header">
+              <span className="ct-form-icon"><FaPaperPlane /></span>
+              <div>
+                <h2>Envíanos un mensaje</h2>
+                <p>Te responderemos por correo y WhatsApp.</p>
               </div>
             </div>
-          </motion.div>
 
-          {/* Form Side */}
-          <motion.div className="contact-form-container" variants={cardVariants}>
-            <h2>Envíanos un mensaje</h2>
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <div className="form-group input-with-icon">
-                <FaUser className="input-icon" />
-                <input 
-                  type="text" 
-                  name="name"
-                  placeholder="Tu Nombre" 
-                  value={formData.name}
-                  onChange={handleChange}
-                  required 
-                />
-              </div>
-              <div className="form-group input-with-icon">
-                <FaEnvelope className="input-icon" />
-                 <input 
-                  type="email" 
-                  name="email"
-                  placeholder="Tu Correo" 
-                  value={formData.email}
-                  onChange={handleChange}
-                  required 
-                />
-              </div>
-              <div className="form-group input-with-icon">
-                <FaMobileAlt className="input-icon" />
-                 <input 
-                  type="tel" 
-                  name="phone"
-                  placeholder="Tu Celular" 
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required 
-                />
-              </div>
-              <div className="form-group input-with-icon">
-                <FaCommentDots className="input-icon textarea-icon" />
-                 <textarea 
-                  name="message"
-                  placeholder="¿En qué podemos ayudarte?" 
-                  rows="5" 
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" className="btn btn-primary btn-block" disabled={status.submitting}>
-                {status.submitting ? 'Enviando...' : 'Enviar Mensaje'}
-              </button>
-              
-              {status.info.msg && (
-                <div className={`form-status ${status.info.error ? 'error' : 'success'}`}>
-                  {status.info.msg}
+            <form className="ct-form" onSubmit={handleSubmit}>
+              <div className="ct-form-row">
+                {fields.map((f) => (
+                  <div
+                    key={f.name}
+                    className={`ct-field ${f.name === 'name' ? 'ct-field--full' : ''}`}
+                  >
+                    <input
+                      id={`contact-input-${f.name}`}
+                      type={f.type}
+                      name={f.name}
+                      placeholder=" "
+                      value={formData[f.name]}
+                      onChange={handleChange}
+                      required
+                    />
+                    <label htmlFor={`contact-input-${f.name}`}>{f.label}</label>
+                    <span className="ct-field-icon">{f.icon}</span>
+                    <span className="ct-field-bar" />
+                  </div>
+                ))}
+
+                <div className="ct-field ct-field--full ct-field--textarea">
+                  <textarea
+                    id="contact-input-message"
+                    name="message"
+                    placeholder=" "
+                    rows="5"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                  />
+                  <label htmlFor="contact-input-message">¿En qué podemos ayudarte?</label>
+                  <span className="ct-field-icon"><FaCommentDots /></span>
+                  <span className="ct-field-bar" />
                 </div>
-              )}
+              </div>
+
+              <motion.button
+                id="contact-submit"
+                type="submit"
+                className={`ct-submit ${status.submitting ? 'is-loading' : ''}`}
+                disabled={status.submitting}
+                whileHover={{ scale: status.submitting ? 1 : 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <span className="ct-submit-shine" />
+                {status.submitting ? (
+                  <>
+                    <span className="ct-spinner" /> Enviando...
+                  </>
+                ) : (
+                  <>
+                    Enviar mensaje <FaPaperPlane className="ct-submit-plane" />
+                  </>
+                )}
+              </motion.button>
+
+              <AnimatePresence>
+                {status.info.msg && (
+                  <motion.div
+                    key={status.info.msg}
+                    className={`form-status ${status.info.error ? 'error' : 'success'}`}
+                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -10 }}
+                  >
+                    {status.info.error ? <FaExclamationCircle /> : <FaCheckCircle />}
+                    {status.info.msg}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </form>
           </motion.div>
         </motion.div>
