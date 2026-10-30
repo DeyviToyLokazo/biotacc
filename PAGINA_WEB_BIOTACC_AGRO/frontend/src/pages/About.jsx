@@ -20,8 +20,11 @@ const Typewriter = ({ text, delay = 100 }) => {
         setCurrentIndex(prevIndex => prevIndex + 1);
       }, delay);
       return () => clearTimeout(timeout);
-    } else if (currentIndex >= text.length) {
-      setShowCursor(false);
+    } else if (isInView && currentIndex >= text.length) {
+      const timeout = setTimeout(() => {
+        setShowCursor(false);
+      }, 500);
+      return () => clearTimeout(timeout);
     }
   }, [currentIndex, delay, text, isInView]);
 
@@ -95,7 +98,7 @@ const About = () => {
               </motion.p>
             </div>
             <div className="about-image">
-              <img src="/images/founder.png" alt="Fundador BIOTACC AGRO" className="founder-img" />
+              <img src="/images/founder.webp" alt="Fundador BIOTACC AGRO" className="founder-img" />
             </div>
           </div>
         </div>
@@ -107,7 +110,7 @@ const About = () => {
             <div className="mission-card mission-card-mision">
               <div
                 className="mission-bg"
-                style={{ backgroundImage: `url('/images/mision.jpg')` }}
+                style={{ backgroundImage: `url('/images/mision.webp')` }}
                 aria-hidden="true"
               ></div>
               <div className="mission-overlay" aria-hidden="true"></div>
@@ -132,7 +135,7 @@ const About = () => {
             <div className="mission-card mission-card-vision">
               <div
                 className="mission-bg"
-                style={{ backgroundImage: `url('/images/vision.jpg')` }}
+                style={{ backgroundImage: `url('/images/vision.webp')` }}
                 aria-hidden="true"
               ></div>
               <div className="mission-overlay" aria-hidden="true"></div>

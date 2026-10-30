@@ -33,14 +33,18 @@ const Typewriter = ({ text, delay = 100, startDelay = 0 }) => {
   }, [isInView, startDelay, isStarted]);
 
   useEffect(() => {
-    if (isStarted && currentIndex < text.length) {
+    if (!isStarted) return;
+    if (currentIndex < text.length) {
       const timeout = setTimeout(() => {
         setCurrentText(prevText => prevText + text[currentIndex]);
         setCurrentIndex(prevIndex => prevIndex + 1);
       }, delay);
       return () => clearTimeout(timeout);
-    } else if (currentIndex >= text.length) {
-      setShowCursor(false);
+    } else {
+      const timeout = setTimeout(() => {
+        setShowCursor(false);
+      }, 500);
+      return () => clearTimeout(timeout);
     }
   }, [currentIndex, delay, text, isStarted]);
 

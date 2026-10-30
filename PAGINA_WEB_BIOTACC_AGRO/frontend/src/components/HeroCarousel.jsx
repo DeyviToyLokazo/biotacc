@@ -5,9 +5,9 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import '../styles/HeroCarousel.css';
 
 // Import local images
-import slider1 from '../assets/images/slider-1.jpg';
-import slider2 from '../assets/images/slider-2.jpg';
-import slider3 from '../assets/images/slider-3.jpg';
+import slider1 from '../assets/images/slider-1.webp';
+import slider2 from '../assets/images/slider-2.webp';
+import slider3 from '../assets/images/slider-3.webp';
 
 const slides = [
   {
@@ -33,20 +33,20 @@ const slides = [
 const HeroCarousel = () => {
   const [current, setCurrent] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      nextSlide();
-    }, 6000);
-    return () => clearInterval(timer);
-  }, [current]);
-
   const nextSlide = () => {
-    setCurrent(current === slides.length - 1 ? 0 : current + 1);
+    setCurrent(prev => (prev === slides.length - 1 ? 0 : prev + 1));
   };
 
   const prevSlide = () => {
-    setCurrent(current === 0 ? slides.length - 1 : current - 1);
+    setCurrent(prev => (prev === 0 ? slides.length - 1 : prev - 1));
   };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent(prev => (prev === slides.length - 1 ? 0 : prev + 1));
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div className="hero-carousel">

@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
 import PageLoader from './components/PageLoader';
 
-// Pages
+// Landing page loaded eagerly for instant first paint
 import Home from './pages/Home';
-import About from './pages/About';
-import Catalog from './pages/Catalog';
-import ProductDetail from './pages/ProductDetail';
-import Contact from './pages/Contact';
-import Premium from './pages/Premium';
-import Services from './pages/Services';
+
+// Lazy-loaded pages for smaller initial bundle and faster load times
+const About = lazy(() => import('./pages/About'));
+const Catalog = lazy(() => import('./pages/Catalog'));
+const ProductDetail = lazy(() => import('./pages/ProductDetail'));
+const Services = lazy(() => import('./pages/Services'));
+const Premium = lazy(() => import('./pages/Premium'));
+const Contact = lazy(() => import('./pages/Contact'));
 
 function App() {
   // Solo mostrar el loader la primera vez que se entra a la web
@@ -31,17 +33,19 @@ function App() {
       <Router>
         <ScrollToTop />
         <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/nosotros" element={<About />} />
-            <Route path="/productos" element={<Catalog />} />
-            <Route path="/productos/:id" element={<ProductDetail />} />
-            <Route path="/servicios" element={<Services />} />
-            <Route path="/premium" element={<Premium />} />
-            <Route path="/contacto" element={<Contact />} />
-            {/* Fallback */}
-            <Route path="*" element={<Home />} />
-          </Routes>
+          <Suspense fallback={<div style={{ minHeight: '60vh' }} />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/nosotros" element={<About />} />
+              <Route path="/productos" element={<Catalog />} />
+              <Route path="/productos/:id" element={<ProductDetail />} />
+              <Route path="/servicios" element={<Services />} />
+              <Route path="/premium" element={<Premium />} />
+              <Route path="/contacto" element={<Contact />} />
+              {/* Fallback */}
+              <Route path="*" element={<Home />} />
+            </Routes>
+          </Suspense>
         </Layout>
       </Router>
     </>

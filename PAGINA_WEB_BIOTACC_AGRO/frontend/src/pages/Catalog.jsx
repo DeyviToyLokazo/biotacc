@@ -30,8 +30,11 @@ const Typewriter = ({ text, delay = 80 }) => {
         setCurrentIndex(prevIndex => prevIndex + 1);
       }, delay);
       return () => clearTimeout(timeout);
-    } else if (currentIndex >= text.length) {
-      setShowCursor(false);
+    } else if (isInView && currentIndex >= text.length) {
+      const timeout = setTimeout(() => {
+        setShowCursor(false);
+      }, 500);
+      return () => clearTimeout(timeout);
     }
   }, [currentIndex, delay, text, isInView]);
 

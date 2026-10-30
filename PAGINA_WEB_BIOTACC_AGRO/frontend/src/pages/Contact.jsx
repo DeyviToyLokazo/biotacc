@@ -34,8 +34,11 @@ const Typewriter = ({ text, delay = 100 }) => {
         setCurrentIndex(prevIndex => prevIndex + 1);
       }, delay);
       return () => clearTimeout(timeout);
-    } else if (currentIndex >= text.length) {
-      setShowCursor(false);
+    } else if (isInView && currentIndex >= text.length) {
+      const timeout = setTimeout(() => {
+        setShowCursor(false);
+      }, 500);
+      return () => clearTimeout(timeout);
     }
   }, [currentIndex, delay, text, isInView]);
 
@@ -160,7 +163,7 @@ Consulta: ${formData.message}`;
         const data = await response.json();
         handleServerResponse(false, data.error || "Hubo un error al enviar el mensaje por correo.");
       }
-    } catch (error) {
+    } catch {
       handleServerResponse(false, "Hubo un error de conexión.");
     }
   };
